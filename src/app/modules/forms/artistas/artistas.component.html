@@ -1,0 +1,58 @@
+<section class="container">
+
+    <section class="card">
+
+        <section class="card-content">
+            <span class="card-title amber-text text-acent-4">Crear Artistas</span>
+            <div class="row">
+                <form (ngSubmit)="guardarRegistro(formArtista)" #formArtista="ngForm" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input name="nombre" [(ngModel)]="artista.nombre" #nombre="ngModel" id="nombre_artista" type="text" class="validate">
+                            <label for="nombre_artista">Nombre</label>
+                        </div>
+
+                        <div class="input-field col s6">
+                            <input name=genero [(ngModel)]="artista.genero" #genero="ngModel" id="last_name" type="text" class="validate">
+                            <label for="last_name">Genero</label>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input name="cancionFavorita" [(ngModel)]="artista.cancionFavorita" #cancionFavorita="ngModel" id="cancion_recomendada" type="text" class="validate">
+                            <label for="cancion_recomendada">Cancion Recomendada</label>
+                        </div>
+
+                        <div class="input-field col s6">
+                            <input name="url" [(ngModel)]="artista.url_imagenartista" #url_imagenartista="ngModel" id="url_imagen" type="text" class="validate">
+                            <label for="url_imagen">URL Imagen</label>
+                        </div>
+                    </div>
+
+
+                    <button class="btn waves-effect waves-light yellow-text text-lighten-5 yellow darken-3" type="submit" name="action">Submit
+                      <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </section>
+
+
+
+
+    <section>
+        <div class="media mt-2 border border-warning" *ngFor="let artista of listadoArtistas">
+            <img [src]="artista.url_imagenartista" class="mr-3 image-size" alt="...">
+            <div class="media-body">
+                <h5 class="mt-0">{{artista.nombre}}</h5>
+                <p>Cancion recomendada: {{artista.cancionFavorita}}</p>
+                <p>Genero: {{artista.genero}}</p>
+            </div>
+        </div>
+    </section>
+
+</section>

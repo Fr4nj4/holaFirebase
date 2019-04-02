@@ -1,0 +1,61 @@
+<section class="container">
+
+    <section class="card">
+
+        <section class="card-content">
+            <span class="card-title amber-text text-acent-4">CONFIGURACIÓN PERFILES</span>
+            <div class="row">
+                <form (ngSubmit)="guardarRegistro(formArtista)" #formArtista="ngForm" class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input name="nombre" [(ngModel)]="respuestaServicio[0].descripcion" #nombre="ngModel" id="nombre_artista" type="text" class="validate">
+                            <label for="nombre_artista">Nombre Perfil</label>
+                        </div>
+
+                        <div class="input-field col s6">
+                            <input name=estatus [(ngModel)]="respuestaServicio[0].estatus" #estatus="ngModel" id="last_name" type="text" class="validate">
+                            <label for="last_name">Estatus</label>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <div class="switch">
+                                <label>
+                                <input [checked]="respuestaServicio[0].vigencia === '1'" type="checkbox">
+                                <span class="lever"></span>
+                                Aplica Vigencia
+                              </label>
+                            </div>
+                            <!-- <input name="vigencia" [(ngModel)]="respuestaServicio[0].vigencia" #vigencia="ngModel" id="cancion_recomendada" type="text" class="validate">
+                            <label for="cancion_recomendada">Aplica Vigencia</label> -->
+                        </div>
+
+                        <div class="input-field col s6">
+                            <input name="fechaIniVig" [(ngModel)]="respuestaServicio[0].fechaIniVig" #fechaIniVig="ngModel" id="cancion_recomendada" type="text" class="validate">
+                            <label for="cancion_recomendada">Inicio Vigencia</label>
+                        </div>
+
+
+                        <div class="input-field col s6">
+                            <input name="fechaFinVig" [(ngModel)]="respuestaServicio[0].fechaFinVig" #fechaFinVig="ngModel" id="cancion_recomendada" type="text" class="validate">
+                            <label for="cancion_recomendada">Fin Vigencia</label>
+                        </div>
+
+                    </div>
+
+
+                    <button class="btn waves-effect waves-light yellow-text text-lighten-5 yellow darken-3" type="submit" name="action">Submit
+                    <i class="material-icons right">send</i>
+                  </button>
+                </form>
+            </div>
+        </section>
+    </section>
+
+
+
+
+</section>

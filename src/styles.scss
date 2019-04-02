@@ -1,1 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+
+@import "../node_modules/materialize-css/dist/css/materialize.min.css";
+$primary-color: lighten(#f44336, 2) !default;
+@import "../node_modules/materialize-css/sass/materialize";
